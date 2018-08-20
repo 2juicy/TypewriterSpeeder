@@ -1,3 +1,5 @@
+window.addEventListener("load", init);
+
 // Global Variables
 
 let delay = 5;
@@ -39,3 +41,14 @@ const words = [
   "space",
   "definition"
 ];
+
+// Initialize Game
+function init() {
+  console.log("init");
+  showWord(words);
+}
+
+// Randomizes and outputs word
+function showWord(words) {
+  const randIndex = Math.floor(Math.random() * words.length);
+}
