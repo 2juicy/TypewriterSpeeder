@@ -53,6 +53,7 @@ function init() {
 // Starts Game
 function startGame() {
   if (matchWords()) {
+    isPlaying = true;
     console.log("Testing win!");
   }
 }
@@ -61,6 +62,7 @@ function startGame() {
 function matchWords() {
   if (wordInput.value === currentWord.innerHTML) {
     message.innerHTML = "Correct!";
+    return true;
   } else {
     message.innerHTML = "";
     return false;
