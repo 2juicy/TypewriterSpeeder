@@ -2,7 +2,7 @@ window.addEventListener("load", init);
 
 // Global Variables
 
-let delay = 5;
+let time = 5;
 let score = 0;
 let inPlay;
 
@@ -46,6 +46,7 @@ const words = [
 function init() {
   showWord(words);
   setInterval(countdown, 1000);
+  setInterval(checkState, 50);
 }
 
 // Randomizes and outputs word
@@ -63,4 +64,11 @@ function countdown() {
     inPlay = false;
   }
   timeDisplay.innerHTML = time;
+}
+
+// Game state
+function checkState() {
+  if (!inPlay && time === 0) {
+    message.innerHTML = "Game Over!";
+  }
 }
