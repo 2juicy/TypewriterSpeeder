@@ -60,7 +60,11 @@ function startGame() {
     wordInput.value = "";
     score++;
   }
-  scoreDisplay.innerHTML = score;
+  if (score < 0) {
+    scoreDisplay.innerHTML = 0;
+  } else {
+    scoreDisplay.innerHTML = score;
+  }
 }
 
 // Checks for correct word
@@ -95,5 +99,6 @@ function countdown() {
 function checkState() {
   if (!inPlay && time === 0) {
     message.innerHTML = "Game Over!";
+    score = -1;
   }
 }
