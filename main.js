@@ -42,11 +42,29 @@ const words = [
   "definition"
 ];
 
-// Starts Game
+// Initialize Game
 function init() {
   showWord(words);
+  wordInput.addEventListener("input", startGame);
   setInterval(countdown, 1000);
   setInterval(checkState, 50);
+}
+
+// Starts Game
+function startGame() {
+  if (matchWords()) {
+    console.log("Testing win!");
+  }
+}
+
+// Checks for correct word
+function matchWords() {
+  if (wordInput.value === currentWord.innerHTML) {
+    message.innerHTML = "Correct!";
+  } else {
+    message.innerHTML = "";
+    return false;
+  }
 }
 
 // Randomizes and outputs word
