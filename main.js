@@ -42,13 +42,25 @@ const words = [
   "definition"
 ];
 
-// Initialize Game
+// Starts Game
 function init() {
-  console.log("init");
   showWord(words);
+  setInterval(countdown, 1000);
 }
 
 // Randomizes and outputs word
 function showWord(words) {
   const randIndex = Math.floor(Math.random() * words.length);
+  currentWord.innerHTML = words[randIndex];
+}
+
+// Countdown timer
+function countDown() {
+  // Checks if user is out of time
+  if (time > 0) {
+    time--;
+  } else if (time === 0) {
+    inPlay = false;
+  }
+  timeDisplay.innerHTML = time;
 }
