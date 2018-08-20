@@ -54,8 +54,13 @@ function init() {
 function startGame() {
   if (matchWords()) {
     isPlaying = true;
-    console.log("Testing win!");
+    // Set time to one above because page load = 1 seconds
+    time = 6;
+    showWord(words);
+    wordInput.value = "";
+    score++;
   }
+  scoreDisplay.innerHTML = score;
 }
 
 // Checks for correct word
