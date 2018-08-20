@@ -55,7 +55,7 @@ function showWord(words) {
 }
 
 // Countdown timer
-function countDown() {
+function countdown() {
   // Checks if user is out of time
   if (time > 0) {
     time--;
