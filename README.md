@@ -1,4 +1,4 @@
-# TypewriterSpeeder
+# TypingWordGame
 
 A game where you are given a word and have 5 seconds to type it!
 
